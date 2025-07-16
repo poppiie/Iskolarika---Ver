@@ -171,6 +171,11 @@
             <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
             Sign in with Google
           </button>
+
+          <div class="text-center mt-3">
+  <span>Already have an account?</span>
+  <a href="{{ route('login') }}" class="text-decoration-none"><strong>Sign In</strong></a>
+</div>
 </form>
 
 @if (session('success'))

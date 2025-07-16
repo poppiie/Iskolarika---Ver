@@ -37,6 +37,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth')->name('dashboard');
 
+Route::get('/dashboard-admin', function () {
+    return view('dashboard-admin');
+})->middleware('auth')->name('dashboard-admin');
 
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 
@@ -54,4 +57,8 @@ Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
 Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
 Route::post('/reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 
+use App\Http\Controllers\AdminLoginController;
 
+Route::get('/admin-login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin-login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin-logout', [AdminLoginController::class, 'logout'])->name('admin.logout');

@@ -99,8 +99,35 @@
   </div>
 </div>
 
-<!-- @include('layouts.partials.footer') -->
+
+<!-- ...rest of HTML above -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('status'))
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+Swal.fire({
+  title: '<img src="{{ asset('images/reset-icon.png') }}" style="width: 80px; margin-bottom: 20px;"><br><span style="font-size: 22px; font-weight: 600; color: #0F2B5B;">Reset your Password</span>',
+  html: `
+    <p style="color: #333; margin-top: 10px; font-size: 14px;">
+      Check your email for link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.
+    </p>
+  `,
+  showConfirmButton: true,
+  confirmButtonText: 'RETURN TO SIGN IN',
+  confirmButtonColor: '#0F6FC5',
+  customClass: {
+    popup: 'swal2-padding'
+  }
+}).then(() => {
+  window.location.href = "{{ route('login') }}";
+});
+</script>
+@endif
+
+
 </body>
 </html>
+

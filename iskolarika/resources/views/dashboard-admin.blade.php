@@ -18,13 +18,15 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Dashboard</h5>
-        <p class="card-text">You have successfully logged in. Start managing your scholarship system here.</p>
+        <p class="card-text">You have successfully logged in. Start managing Bicol University scholar accounts</p>
         
-        <a href="#" class="btn btn-danger" onclick="confirmLogout()">Logout</a>
+        <!-- <a href="#" class="btn btn-danger" onclick="confirmLogout()">Logout</a> -->
 
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-        </form>
+        <form action="{{ route('admin.logout') }}" method="POST">
+  @csrf
+  <button type="submit" class="btn btn-outline-danger">Logout</button>
+</form>
+
       </div>
     </div>
   </div>
