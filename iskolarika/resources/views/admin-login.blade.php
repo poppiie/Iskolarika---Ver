@@ -164,9 +164,9 @@
             </span>
           </div>
 
-          <a href="#" class="forgot-link" style="text-decoration: none;">Forgot password?</a>
+          <!-- <a href="#" class="forgot-link" style="text-decoration: none;">Forgot password?</a> -->
 
-          <button type="submit" class="btn btn-danger w-100 mb-3">Admin Login</button>
+          <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
         </form>
       </div>
     </div>
